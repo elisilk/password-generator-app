@@ -65,15 +65,17 @@ Hmm 🤔 ...
 
 Specific areas that the solution should be improved:
 
+- Implement password strength algorithm
+- Get checkbox list functional
+- Decide what special characters are allowed
 - In defiance of the design's "Empty" state, choose to set up initial state (in HTML and in JS) with some amount of checkboxes checked and the slider at some reasonable start value (e.g., 12)
 - Make a JS function that initializes the form based on the current values (e.g., sets the character length output to be the current value of the slider, rather than being set in the HTML; and does the same for the checkboxes and ???)
-- Get copy button functional
+- Make sure "Copied" + icon are on top of the password and their backgrounds are not transparent, so it's easier to see them when the password length is long
+- Decide on best behavior for the password input field when clicked on it. Should it prevent the default behavior and just copy the password to the clipboard? Or should it select the entire password (and also copy to the clipboard)? Or should it even allow users to edit the password (and then copy it)? Or what?
 - Error checking
   - character length slider value > 0
   - at least one of the checkboxes checked
   - (make the error states show up somewhere?)
-- Get checkbox list functional
-- Decide what special characters are allowed
 - Check over spacing and font sizes
 - Why does the generate button stay active/focused after a click? What should happen?
 - Use lambdatest to test on different browsers
