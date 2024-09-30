@@ -58,6 +58,13 @@ Users should be able to:
 - styling ranges/sliders
 
 - [SVG hover](https://css-tricks.com/change-color-of-svg-on-hover/) and the [different ways to use SVG in HTML markup](https://css-tricks.com/using-svg/)
+- When working with SVGs in HTML, [I also learned that to resize them properly](https://stackoverflow.com/questions/3120739/resizing-svg-in-html), it's best to set the [`viewbox`](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/viewBox) attribute (and delete the actual heights and widths specified in the SVG). And maybe also in combination with the [`preserveAspectRatio`](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/preserveAspectRatio) attribute, too?
+- I continue to learn a lot about working with arrays and objects. I am still learning about under what conditions to us [`find()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find) vs. [`filter()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter). Or how to use other cool functions like [`reduce()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce) and [`map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map). And then chaining them is even better, [like chaining `filter()` with `join()`](https://stackoverflow.com/questions/37486800/array-join-with-condition).
+- I thought about creating my own way to evaluate the strength of a password, but ended up utilizing [`zxcvbn`](https://github.com/dropbox/zxcvbn) on off-the-shelf utility. A [great explanation of how it works](https://dropbox.tech/security/zxcvbn-realistic-password-strength-estimation) is available too.
+- A lot of time was spent figuring out how to style the form elements. Ugh. That is way harder than it should be. So many "non-standard" elements involved (e.g., [`::-moz-range-progress`](https://developer.mozilla.org/en-US/docs/Web/CSS/::-moz-range-progress)), which doesn't give me a lot of faith that most users will see the same thing.
+  - [`<input type="range">`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range)
+    - [A decent CSS generator](https://danielstern.ca/range.css/#/)
+  - []()
 
 ### Continued development
 
@@ -79,7 +86,7 @@ Specific areas that the solution should be improved:
 - Check over spacing and font sizes
 - Why does the generate button stay active/focused after a click? What should happen?
 - Use lambdatest to test on different browsers
-- Or better yet, start with Firefox, Safari, Tor, etc., on my machine first and see if issues come up. For example, looks like the input range slider has a thick white border in Firefox.
+- Or better yet, start with Firefox, Safari, Tor, etc., on my local machine first and see if issues come up. For example, looks like the input range slider has a thick white border in Firefox.
 
 More general ideas I want to consider:
 

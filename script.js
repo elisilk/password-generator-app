@@ -21,7 +21,6 @@ const characterLengthOutput = document.getElementById(
 const characterLengthSlider = document.getElementById(
   "character-length-slider"
 );
-
 const checkboxOptions = document.querySelectorAll('input[type="checkbox"]');
 
 // Output evaluation elements (assess the password strength)
