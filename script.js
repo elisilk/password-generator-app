@@ -83,6 +83,7 @@ const passwordCharacterOptions = [
 
 const generateNewPassword = (length, charactersAllowed) => {
   if (length <= 0) return false;
+  if (charactersAllowed == "") return false;
 
   const charactersLength = charactersAllowed.length;
 
