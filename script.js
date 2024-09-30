@@ -8,12 +8,13 @@ const passwordGeneratorForm = document.getElementById(
 );
 
 // Key elements
+
+// Output elements (the generated password and ability to copy it)
 const outputTextElement = document.getElementById("output-text");
 const outputCopyIcon = document.getElementById("output-copy-icon");
 const outputCopySuccess = document.getElementById("output-copy-success");
 
-const generateButtonElement = document.getElementById("generate-button");
-
+// Input elements (password options)
 const characterLengthOutput = document.getElementById(
   "character-length-output"
 );
@@ -21,8 +22,15 @@ const characterLengthSlider = document.getElementById(
   "character-length-slider"
 );
 
-// Key groups of elements
+const checkboxOptions = document.querySelectorAll('input[type="checkbox"]');
+
+// Output evaluation elements (assess the password strength)
 const strengthEvalLevels = document.querySelectorAll(".strength-eval__level");
+
+// Submit elements (the generate new password button)
+const generateButtonElement = document.getElementById("generate-button");
+
+let charactersAllowed = "";
 
 // ----------------------------------------
 // Helper Functions
@@ -46,19 +54,35 @@ const generateASCIICharacters = (start = 33, end = 126) => {
   return result;
 };
 
-const generateNewPassword = (length) => {
+const passwordCharacterOptions = [
+  {
+    checkboxId: "include-uppercase",
+    name: "uppercase",
+    include: true,
+    characters: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+  },
+  {
+    checkboxId: "include-lowercase",
+    name: "lowercase",
+    include: true,
+    characters: "abcdefghijklmnopqrstuvwxyz",
+  },
+  {
+    checkboxId: "include-numbers",
+    name: "numbers",
+    include: true,
+    characters: "0123456789",
+  },
+  {
+    checkboxId: "include-symbols",
+    name: "symbols",
+    include: true,
+    characters: `~!@#$%^&*()_-+={[}]|:;<,>.?/`,
+  },
+];
+
+const generateNewPassword = (length, charactersAllowed) => {
   if (length <= 0) return false;
-
-  const charactersUppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  const charactersLowercase = "abcdefghijklmnopqrstuvwxyz";
-  const charactersNumbers = "0123456789";
-  const charactersSymbols = `~!@#$%^&*()_-+={[}]|:;<,>.?/`;
-
-  const charactersAllowed =
-    charactersUppercase +
-    charactersLowercase +
-    charactersNumbers +
-    charactersSymbols;
 
   const charactersLength = charactersAllowed.length;
 
@@ -96,9 +120,6 @@ const evaluatePasswordStrength = (password) => {
 };
 
 const showStrengthEval = (strength, labels) => {
-  //console.log(strength + ": " + labels[strength]);
-  //console.log("strength-eval__level--" + labels[strength]);
-
   strengthEvalLevels.forEach((level) => {
     if (!level.classList.contains("strength-eval__level--hide")) {
       level.classList.add("strength-eval__level--hide");
@@ -107,6 +128,24 @@ const showStrengthEval = (strength, labels) => {
       level.classList.remove("strength-eval__level--hide");
     }
   });
+};
+
+const setCharacterLength = () => {
+  characterLengthOutput.textContent = characterLengthSlider.value;
+};
+
+const setPasswordOptions = () => {
+  checkboxOptions.forEach((checkbox) => {
+    passwordCharacterOptions.find(
+      (el) => el.checkboxId == checkbox.id
+    ).include = checkbox.checked;
+  });
+
+  // passwordCharacterOptions
+  charactersAllowed = passwordCharacterOptions
+    .filter((el) => el.include)
+    .map((x) => x.characters)
+    .join();
 };
 
 const copyPasswordToClipboard = (password) => {
@@ -145,6 +184,11 @@ const clearFocus = () => {
   }
 };
 
+const initializeForm = () => {
+  setCharacterLength();
+  setPasswordOptions();
+};
+
 // ----------------------------------------
 // Event Listener Functions
 // ----------------------------------------
@@ -167,17 +211,19 @@ const handleCopy = (e) => {
 };
 
 const handleSlider = (e) => {
-  //console.log("slider: " + e.target.value);
-  characterLengthOutput.textContent = e.target.value;
+  setCharacterLength();
 };
 
 const handleSubmit = (e) => {
   e.preventDefault();
 
-  //console.log("submitted");
   //console.log(generateASCIICharacters(33, 126));
 
-  let newPassword = generateNewPassword(Number(characterLengthSlider.value));
+  setPasswordOptions();
+  let newPassword = generateNewPassword(
+    Number(characterLengthSlider.value),
+    charactersAllowed
+  );
   if (newPassword) {
     outputTextElement.value = newPassword;
     outputTextElement.disabled = false;
@@ -191,6 +237,10 @@ const handleSubmit = (e) => {
   }, 3000);
 };
 
+const handlePageLoad = (e) => {
+  initializeForm();
+};
+
 // ----------------------------------------
 // Add event listeners to all input elements in the form
 // ----------------------------------------
@@ -200,3 +250,5 @@ outputCopyIcon.addEventListener("click", handleCopy);
 
 generateButtonElement.addEventListener("click", handleSubmit);
 passwordGeneratorForm.addEventListener("submit", handleSubmit);
+
+window.addEventListener("load", handlePageLoad);
