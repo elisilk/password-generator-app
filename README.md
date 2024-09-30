@@ -66,6 +66,7 @@ Hmm 🤔 ...
 Specific areas that the solution should be improved:
 
 - In defiance of the design's "Empty" state, choose to set up initial state (in HTML and in JS) with some amount of checkboxes checked and the slider at some reasonable start value (e.g., 12)
+- Make a JS function that initializes the form based on the current values (e.g., sets the character length output to be the current value of the slider, rather than being set in the HTML; and does the same for the checkboxes and ???)
 - Get copy button functional
 - Error checking
   - character length slider value > 0
