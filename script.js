@@ -47,8 +47,6 @@ const generateASCIICharacters = (start = 33, end = 126) => {
 };
 
 const generateNewPassword = (length) => {
-  //return "test";
-
   if (length <= 0) return false;
 
   const charactersUppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -77,24 +75,30 @@ const generateNewPassword = (length) => {
   return result;
 };
 
-// validations for this specific form
+const zxcvbnStrengthScores = {
+  0: { label: "too guessable", myScore: 0 },
+  1: { label: "very guessable", myScore: 0 },
+  2: { label: "somewhat guessable", myScore: 1 },
+  3: { label: "safely unguessable", myScore: 2 },
+  4: { label: "very unguessable", myScore: 3 },
+};
+
 const strengthLabels = {
-  0: "too-weak",
-  1: "weak",
-  2: "medium",
-  3: "strong",
+  0: "too-weak", // 0 - Too Weak!
+  1: "weak", // 1 - Weak
+  2: "medium", // 2 - Medium
+  3: "strong", // 3 - Strong
 };
 
 const evaluatePasswordStrength = (password) => {
-  // 0 - Too Weak!
-  // 1 - Weak
-  // 2 - Medium
-  // 3 - Strong
-
-  return getRandomInt(4);
+  //return getRandomInt(4);
+  return zxcvbnStrengthScores[zxcvbn(password).score].myScore;
 };
 
 const showStrengthEval = (strength, labels) => {
+  console.log(strength + ": " + labels[strength]);
+  console.log("strength-eval__level--" + labels[strength]);
+
   strengthEvalLevels.forEach((level) => {
     //console.log(level.classList);
     //console.log(level.classList.contains("strength-eval__level--hide"));
@@ -102,8 +106,6 @@ const showStrengthEval = (strength, labels) => {
     if (!level.classList.contains("strength-eval__level--hide")) {
       level.classList.add("strength-eval__level--hide");
     }
-
-    //console.log("strength-eval__level--" + labels[strength]);
     if (level.classList.contains("strength-eval__level--" + labels[strength])) {
       level.classList.remove("strength-eval__level--hide");
     }

@@ -79,6 +79,7 @@ Specific areas that the solution should be improved:
 - Check over spacing and font sizes
 - Why does the generate button stay active/focused after a click? What should happen?
 - Use lambdatest to test on different browsers
+- Or better yet, start with Firefox, Safari, Tor, etc., on my machine first and see if issues come up. For example, looks like the input range slider has a thick white border in Firefox.
 
 More general ideas I want to consider:
 
