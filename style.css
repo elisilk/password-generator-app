@@ -102,6 +102,11 @@
   padding: 0;
 }
 
+svg,
+img {
+  display: block;
+}
+
 /* Global styling */
 
 body {

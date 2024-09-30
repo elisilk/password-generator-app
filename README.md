@@ -66,11 +66,7 @@ Hmm 🤔 ...
 Specific areas that the solution should be improved:
 
 - In defiance of the design's "Empty" state, choose to set up initial state (in HTML and in JS) with some amount of checkboxes checked and the slider at some reasonable start value (e.g., 12)
-- Slight vertical shift in the `.strength-eval` element when unhiding one of the strength labels
 - Get copy button functional
-- Get copy button icon to resize appropriately
-- Add word "Copied" after copy success (and take away after some set period of time?)
-- Figure out where extra vertical spacing in the copy button is coming from and remove it
 - Error checking
   - character length slider value > 0
   - at least one of the checkboxes checked

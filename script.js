@@ -139,7 +139,7 @@ const copyPasswordToClipboard = (password) => {
       /* Rejected - text failed to copy to the clipboard */
     }
   );
-  //document.execCommand("copy");
+  return true;
 };
 
 const clearFocus = () => {
