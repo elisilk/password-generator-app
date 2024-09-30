@@ -96,13 +96,10 @@ const evaluatePasswordStrength = (password) => {
 };
 
 const showStrengthEval = (strength, labels) => {
-  console.log(strength + ": " + labels[strength]);
-  console.log("strength-eval__level--" + labels[strength]);
+  //console.log(strength + ": " + labels[strength]);
+  //console.log("strength-eval__level--" + labels[strength]);
 
   strengthEvalLevels.forEach((level) => {
-    //console.log(level.classList);
-    //console.log(level.classList.contains("strength-eval__level--hide"));
-
     if (!level.classList.contains("strength-eval__level--hide")) {
       level.classList.add("strength-eval__level--hide");
     }
@@ -110,13 +107,11 @@ const showStrengthEval = (strength, labels) => {
       level.classList.remove("strength-eval__level--hide");
     }
   });
-
-  //console.log("Strength: " + labels[strength]);
 };
 
 const copyPasswordToClipboard = (password) => {
   if (password == "") {
-    console.log("Copying: (nothing to copy)");
+    //console.log("Copying: (nothing to copy)");
     return false;
   }
 
@@ -131,7 +126,7 @@ const copyPasswordToClipboard = (password) => {
   // Copy to cliphboard
   navigator.clipboard.writeText(password).then(
     () => {
-      console.log("Copied password: " + password);
+      //console.log("Copied password: " + password);
       /* Resolved - text copied to clipboard successfully */
       return true;
     },
