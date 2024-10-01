@@ -227,9 +227,8 @@ const handleSubmit = (e) => {
   if (newPassword) {
     outputTextElement.value = newPassword;
     outputTextElement.disabled = false;
+    showStrengthEval(evaluatePasswordStrength(newPassword), strengthLabels);
   }
-
-  showStrengthEval(evaluatePasswordStrength(newPassword), strengthLabels);
 
   // The input will lose focus after 3 seconds
   setTimeout(() => {

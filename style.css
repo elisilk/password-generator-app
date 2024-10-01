@@ -175,6 +175,7 @@ input {
 /* Output */
 
 .output {
+  --copy-padding: 0.5rem;
   position: relative;
 }
 
@@ -191,11 +192,12 @@ input {
 .output-copy-icon {
   position: absolute;
   top: 50%;
-  right: var(--sp-main-padding-inline);
+  right: calc(var(--sp-main-padding-inline) - var(--copy-padding));
   transform: translateY(-50%);
+  padding: var(--copy-padding);
   appearance: none;
   border: none;
-  background: transparent;
+  background: var(--clr-neutral-700);
   cursor: pointer;
 }
 
@@ -204,9 +206,13 @@ input {
   position: absolute;
   top: 50%;
   right: var(--sp-main-padding-inline);
-  transform: translateX(calc((-1 * var(--copy-icon-height) * 21 / 24) - 1rem))
+  transform: translateX(
+      calc((-1 * var(--copy-icon-height) * 21 / 24) - var(--copy-padding))
+    )
     translateY(-50%);
+  padding: var(--copy-padding);
   color: var(--clr-green);
+  background: var(--clr-neutral-700);
   text-transform: uppercase;
 }
 
