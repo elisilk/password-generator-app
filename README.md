@@ -82,6 +82,12 @@ Users should be able to:
 
 Specific areas that the solution should be improved:
 
+- Use JavaScript and `linear-gradient` to update the range track as the slide is moved. Or maybe there is a way to achieve this in CSS only?
+  - [Creating a custom CSS range slider with JavaScript upgrades](https://blog.logrocket.com/creating-custom-css-range-slider-javascript-upgrades/)
+  - [CodenPen - Input Range with Gradient colors (CSS)](https://codepen.io/VickyAzola/pen/vYvYqKW)
+  - [Custom range input progress fill](https://nerdy.dev/add-a-rad-gradient-progress-fill-to-a-range-input-with-no-JS)
+  - [Observation: Range Input’s Thumb and Emerging CSS](https://blog.kizu.dev/input-range-thumb/)
+  - [range CodePen](https://codepen.io/kizu/details/yLQVvdq)
 - Decide what special characters are allowed
 - In defiance of the design's "Empty" state, choose to set up initial state (in HTML and in JS) with some amount of checkboxes checked and the slider at some reasonable start value (e.g., 12)
 - Decide on best behavior for the password input field when clicked on it. Should it prevent the default behavior and just copy the password to the clipboard? Or should it select the entire password (and also copy to the clipboard)? Or should it even allow users to edit the password (and then copy it)? Or what?
@@ -105,6 +111,7 @@ Hmm 🤔 ...
   - [Differences Between CSS :hover and :focus](https://medium.com/@Musakusbey/css-hover-focus-farklar%C4%B1-nedir-e0024fad7cf4)
 - Are double form submissions a problem? Should there be some clearer feedbback that a user has initiated a form submission and they should wait a momement?
   - [HTML Forms: How (and Why) to Prevent Double Form Submissions](https://www.bram.us/2020/11/04/preventing-double-form-submissions/)
+- [Scroll-driven animations](https://scroll-driven-animations.style/) - Although not something specific to this design challenge, it is something I want to be learning about more generally and looks fun!
 
 ### Useful resources
 
