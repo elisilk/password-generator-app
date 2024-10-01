@@ -101,7 +101,7 @@ const generateNewPassword = (length, charactersAllowed) => {
 
 const zxcvbnStrengthScores = {
   0: { label: "too guessable", myScore: 0 },
-  1: { label: "very guessable", myScore: 0 },
+  1: { label: "very guessable", myScore: 1 },
   2: { label: "somewhat guessable", myScore: 1 },
   3: { label: "safely unguessable", myScore: 2 },
   4: { label: "very unguessable", myScore: 3 },
