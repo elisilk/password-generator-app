@@ -401,7 +401,7 @@ input[type="range"]::-ms-fill-upper {
 .checkbox-item input[type="checkbox"]::before {
   content: "";
   background-color: var(--clr-neutral-700);
-  -webkit-mask-image: url("./assets/images/icon-check.svg") cover;
+  -webkit-mask: url("./assets/images/icon-check.svg") center no-repeat alpha;
   mask: url("./assets/images/icon-check.svg") center no-repeat alpha;
   position: absolute;
   left: 0;
