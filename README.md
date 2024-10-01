@@ -61,10 +61,20 @@ Users should be able to:
 - When working with SVGs in HTML, [I also learned that to resize them properly](https://stackoverflow.com/questions/3120739/resizing-svg-in-html), it's best to set the [`viewbox`](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/viewBox) attribute (and delete the actual heights and widths specified in the SVG). And maybe also in combination with the [`preserveAspectRatio`](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/preserveAspectRatio) attribute, too?
 - I continue to learn a lot about working with arrays and objects. I am still learning about under what conditions to us [`find()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find) vs. [`filter()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter). Or how to use other cool functions like [`reduce()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce) and [`map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map). And then chaining them is even better, [like chaining `filter()` with `join()`](https://stackoverflow.com/questions/37486800/array-join-with-condition).
 - I thought about creating my own way to evaluate the strength of a password, but ended up utilizing [`zxcvbn`](https://github.com/dropbox/zxcvbn) on off-the-shelf utility. A [great explanation of how it works](https://dropbox.tech/security/zxcvbn-realistic-password-strength-estimation) is available too.
-- A lot of time was spent figuring out how to style the form elements. Ugh. That is way harder than it should be. So many "non-standard" elements involved (e.g., [`::-moz-range-progress`](https://developer.mozilla.org/en-US/docs/Web/CSS/::-moz-range-progress)), which doesn't give me a lot of faith that most users will see the same thing.
+- A lot of time was spent figuring out how to style the form elements, especially the [so-called "ugly" elements, like a range](https://developer.mozilla.org/en-US/docs/Learn/Forms/Advanced_form_styling#what_can_be_done_about_the_ugly_elements). Ugh. That is way harder than it should be. So many "non-standard" elements involved (e.g., [`::-moz-range-progress`](https://developer.mozilla.org/en-US/docs/Web/CSS/::-moz-range-progress)), which doesn't give me a lot of faith that most users will see the same thing.
+  - [`<input type="button">`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/button)
   - [`<input type="range">`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range)
-    - [A decent CSS generator](https://danielstern.ca/range.css/#/)
-  - []()
+    - [Styling Cross-Browser Compatible Range Inputs with CSS by Daniel Stern](https://css-tricks.com/styling-cross-browser-compatible-range-inputs-css/)
+    - [A decent CSS generator by Daniel Stern](https://danielstern.ca/range.css/#/)
+    - [A Sliding Nightmare: Understanding the Range Input](https://css-tricks.com/sliding-nightmare-understanding-range-input/)
+    - [CodePen collection of by Ana Tudor](https://codepen.io/collection/DgYaMj/)
+    - [Styling and scripting sliders by Peter-Paul Koch](https://www.quirksmode.org/blog/archives/2015/11/styling_and_scr.html)
+  - [`<input type="checkbox">`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox)
+    - [The “Checkbox Hack” (and things you can do with it)](https://css-tricks.com/the-checkbox-hack/)
+- [Generate random string/characters in JavaScript](https://stackoverflow.com/questions/1349404/generate-random-string-characters-in-javascript)
+- [What are the best rules to follow for what characters to allow in a password?](https://stackoverflow.com/questions/384489/what-are-the-best-rules-to-follow-for-what-characters-to-allow-in-a-password) - I could not find a clear answer on what special characters to allow in a password. Still interested in this.
+- [The Shapes of CSS](https://css-tricks.com/the-shapes-of-css/) - So how to make those strength level boxes? I felt like a CSS-only shapes approach would be cool, even though they are just rectangles.
+- [Interact with the clipboard](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Interact_with_the_clipboard) - Allow the functionality to copy the generated password to the clipboard. Some additional help from [this freeCodeCamp post](https://www.freecodecamp.org/news/copy-text-to-clipboard-javascript/).
 
 ### Continued development
 
